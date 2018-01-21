@@ -25,7 +25,11 @@ public class AdjusterClient {
 	}
 	
 	public List<Creative> retrieveCreatives(){
-		return null;
+		ResponseEntity<List<Creative>> creativesResponse =
+		        restTemplate.exchange("http://homework.ad-juster.com/api/creatives",
+		                    HttpMethod.GET, null, new ParameterizedTypeReference<List<Creative>>() {
+		            });
+		return creativesResponse.getBody();
 	}
 
 }
