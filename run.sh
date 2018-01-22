@@ -34,3 +34,6 @@ ENCLOSED BY '\"'
 LINES TERMINATED BY '\n';"
 
 echo "Done. Results exported to clicks-and-views-by-campaign.csv"
+
+echo "Destroying mysql container"
+docker rm -f mysql
