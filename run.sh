@@ -15,13 +15,12 @@ echo "Applying initial schema.."
 docker exec -t -i mysql /bin/sh -c 'mysql < /workdir/schema.sql'
 
 echo "Importing data..."
-gradle bootRun
+./gradlew bootRun
 
 echo "Running query..."
 docker exec -t -i mysql mysql -D adjuster -e 'SELECT c.name, SUM(cr.clicks) AS total_clicks, SUM(cr.views) AS total_views, count(*) AS num_creatives FROM campaign c JOIN creative cr on c.id = cr.parent_id GROUP BY c.name;'
 
 echo "Exporting to CSV.."
-
 docker exec -t -i mysql mysql -D adjuster \
 -e "SELECT 'campaign', 'total_clicks', 'total_views', 'revenue'
 UNION ALL
