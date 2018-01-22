@@ -40,8 +40,7 @@ public class AdjusterClientTest {
          .andExpect(method(HttpMethod.GET))
          .andRespond(withSuccess(fakeJson, MediaType.APPLICATION_JSON_UTF8));
 		
-        AdjusterClient client = new AdjusterClient();
-        client.restTemplate = restTemplate;
+        AdjusterClient client = new AdjusterClient(restTemplate);
         List<Campaign> campaigns = client.retrieveCampaigns();
         
         mockServer.verify();
@@ -63,8 +62,7 @@ public class AdjusterClientTest {
          .andExpect(method(HttpMethod.GET))
          .andRespond(withSuccess(fakeJson, MediaType.APPLICATION_JSON_UTF8));
 		
-        AdjusterClient client = new AdjusterClient();
-        client.restTemplate = restTemplate;
+        AdjusterClient client = new AdjusterClient(restTemplate);
         List<Creative> creatives = client.retrieveCreatives();
         
         mockServer.verify();

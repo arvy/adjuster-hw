@@ -4,7 +4,7 @@
 .gradle/
 bin/
 build/
-
+clicks-and-views-by-campaign.csv
 *.ipr
 *.iml
 *.iws

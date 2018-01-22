@@ -12,6 +12,11 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class AdjusterClient {
 	
+	public AdjusterClient(RestTemplate restTemplate) {
+		super();
+		this.restTemplate = restTemplate;
+	}
+
 	@Autowired
 	public RestTemplate restTemplate;
 	

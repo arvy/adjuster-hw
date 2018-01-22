@@ -6,7 +6,7 @@ CREATE TABLE campaign (
   id INTEGER UNSIGNED,
   name VARCHAR(255),
   cpm DECIMAL(5,2),
-  startDate DATE,
+  start_date DATE,
   PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
