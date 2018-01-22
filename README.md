@@ -1,9 +1,11 @@
-* Ad-Juster Homework Assignment
+# Ad-Juster Homework Assignment
 
-** Running Tests
+Submission by Arvydas Jonusonis
+
+## Running Tests
 
     ./gradlew test
 
-** Running Migration and Analysis
+## Running Migration and Analysis
 
     ./run.sh
